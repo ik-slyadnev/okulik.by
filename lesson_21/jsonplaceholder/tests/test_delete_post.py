@@ -1,5 +1,5 @@
-from lesson_21.magic_api.endpoints.create_post_endpoint import CreatePostEndpoint
-from lesson_21.magic_api.endpoints.delete_post_endpoint import DeletePostEndpoint
+from lesson_21.jsonplaceholder.endpoints.create_post_endpoint import CreatePostEndpoint
+from lesson_21.jsonplaceholder.endpoints.delete_post_endpoint import DeletePostEndpoint
 
 
 def test_delete_post():

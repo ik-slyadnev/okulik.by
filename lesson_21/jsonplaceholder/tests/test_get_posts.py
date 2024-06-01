@@ -1,4 +1,4 @@
-from lesson_21.magic_api.endpoints.get_posts_endpoint import GetPostsEndpoint
+from lesson_21.jsonplaceholder.endpoints.get_posts_endpoint import GetPostsEndpoint
 
 
 def test_get_posts():

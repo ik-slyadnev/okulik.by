@@ -1,4 +1,4 @@
-from lesson_21.magic_api.endpoints.create_post_endpoint import CreatePostEndpoint
+from lesson_21.jsonplaceholder.endpoints.create_post_endpoint import CreatePostEndpoint
 
 
 def test_create_post():

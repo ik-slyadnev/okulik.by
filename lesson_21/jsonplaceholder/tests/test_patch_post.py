@@ -1,5 +1,5 @@
-from lesson_21.magic_api.endpoints.create_post_endpoint import CreatePostEndpoint
-from lesson_21.magic_api.endpoints.patch_post_endpoint import PatchPostEndpoint
+from lesson_21.jsonplaceholder.endpoints.create_post_endpoint import CreatePostEndpoint
+from lesson_21.jsonplaceholder.endpoints.patch_post_endpoint import PatchPostEndpoint
 
 
 def test_patch_post():
