@@ -15,10 +15,28 @@ def meme_endpoint():
 
 @pytest.fixture(scope='session')
 def auth_token(auth_endpoint):
+    # Попытка авторизации с использованием ранее сохраненного токена
+    try:
+        with open('token.txt', 'r') as file:
+            token = file.read().strip()
+            auth_endpoint.token = token
+            response = auth_endpoint.check_token()
+            if response.status_code == 200:
+                return token
+    except FileNotFoundError:
+        pass
+
+    # Если ранее сохраненный токен не работает, выполняем новую авторизацию
     auth_endpoint.authorize('test_user')
     auth_endpoint.check_response_status_is_ok()
     auth_endpoint.check_token_is_not_empty()
-    return auth_endpoint.token
+    token = auth_endpoint.token
+
+    # Сохраняем новый токен в файл
+    with open('token.txt', 'w') as file:
+        file.write(token)
+
+    return token
 
 
 @pytest.fixture()
